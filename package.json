@@ -1,5 +1,5 @@
 {
-  "name": "<lanid>-mu-ask-api-km",
+  "name": "<lanid>-mu-aks-api-km",
   "version": "1.0.0",
   "description": "Sample rest api project for AKS Kobayashi Maru",
   "main": "data.js",

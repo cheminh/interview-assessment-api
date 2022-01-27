@@ -2,9 +2,9 @@
 
 Notes:
 
-- This `<PLACEHOLDER>-mu-ask-api-km` project only has 1 endpoint `~/api/v1/provinces-territories` which is used by the `<PLACEHOLDER>-mu-ask-react-km` project.
+- This `<PLACEHOLDER>-mu-aks-api-km` project only has 1 endpoint `~/api/v1/provinces-territories` which is used by the `<PLACEHOLDER>-mu-aks-react-km` project.
 
-- Your goal is to deploy this application to our AKS cluster and let `<PLACEHOLDER>-mu-ask-react-km` connect to it. Existing code works fine and updating it won't necessary bring you any extra credits - the app development part is not the point for this test.
+- Your goal is to deploy this application to our AKS cluster and let `<PLACEHOLDER>-mu-aks-react-km` connect to it. Existing code works fine and updating it won't necessary bring you any extra credits - the app development part is not the point for this test.
 
 - In project root folder, there is a `data.js` file which can be used to serve the hard-coded data to the endpoint.
 
