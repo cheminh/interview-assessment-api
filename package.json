@@ -1,14 +1,14 @@
 {
-  "name": "<lanid>-mu-aks-api-km",
+  "name": "mu-aks-a-starter-api",
   "version": "1.0.0",
-  "description": "Sample rest api project for AKS Kobayashi Maru",
+  "description": "Sample rest api project for MU AKS Advanced",
   "main": "data.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Ray Wang",
+  "author": "Manulife University AKS - Advanced",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
