@@ -1,0 +1,24 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: {{ .Values.appName }} # Replace with a name relevant to your application
+  namespace: {{ .Values.namespace }} # Replace with namespace where you'd like to keep the resource
+spec:
+  gateways:
+  - istio-system/tls-gateway # Replace with the name of your Gateway e.g. <NAMESPACE>/<GATEWAY_NAME>
+  hosts:
+  - {{ .Values.host }} # Replace with the host you defined in your DNS Request
+  http:
+  - match:
+    - uri:
+        prefix: /{{ .Values.prefix }}/{{ .Values.appName }}/ # Replace with the prefix for your application
+    - uri:
+        exact: /{{ .Values.prefix }}/{{ .Values.appName }}
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: {{ .Values.appName }} # Replace with your application's Service
+        port:
+          number: 80 # Replace with the port defined in your application's Service
