@@ -1,13 +1,13 @@
 {
-  "name": "mu-aks-a-starter-api",
+  "name": "student-mu-aks-a-api",
   "version": "1.0.0",
   "description": "Sample rest api project for MU AKS Advanced",
   "main": "data.js",
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker:local:build": "docker build -t mu-aks-a-starter-api:1.0 .",
-    "docker:local:run": "docker run -p 4000:4000 mu-aks-a-starter-api:1.0"
+    "docker:local:build": "docker build -t student-mu-aks-a-api:1.0 .",
+    "docker:local:run": "docker run -p 4000:4000 student-mu-aks-a-api:1.0"
   },
   "keywords": [],
   "author": "Manulife University AKS - Advanced",
