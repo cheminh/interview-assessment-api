@@ -7,13 +7,6 @@ Notes:
 - All instructions are located in the following [Application Deployment](https://github.com/manulife-university-global/mu-aks-a-labs-deployment) lab.
 
 
-If you haven't already done so, clone this app to you local machine:
-> Be sure to replace `<username>` with your lan id.
-
-```bash
-git clone git@github.com:manulife-university-global/mu-aks-a-starter-api.git mu-aks-a-<username>-api
-```
-
 
 Install dependencies:
 
