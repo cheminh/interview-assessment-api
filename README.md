@@ -25,5 +25,3 @@ npm run start
 Once the application is running on your local machine, navigate to the following URL to pull up some data:
 - http://localhost:4000/api/v1/provinces-territories
 
-
-If you are able to see provinces and territories data, then you can move onto the [Application Deployment](https://github.com/manulife-university-global/mu-aks-a-labs-deployment) lab in order to deploy your application to you AKS cluster.
