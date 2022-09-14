@@ -1,4 +1,4 @@
-imageRegistry: 'cdncetdvcacmuprogsacr.azurecr.io'
+imageRegistry: 'acrmuaksstudentdev.azurecr.io'
 apiDockerTag: '1.0'
 namespace: 'default'
 PORT: 4000
