@@ -1,14 +1,16 @@
 {
-  "name": "<lanid>-mu-aks-api-km",
+  "name": "student-mu-aks-a-api",
   "version": "1.0.0",
-  "description": "Sample rest api project for AKS Kobayashi Maru",
+  "description": "Sample rest api project for MU AKS Advanced",
   "main": "data.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:local:build": "docker build -t student-mu-aks-a-api:1.0 .",
+    "docker:local:run": "docker run -p 4000:4000 student-mu-aks-a-api:1.0"
   },
   "keywords": [],
-  "author": "Ray Wang",
+  "author": "Manulife University AKS - Advanced",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

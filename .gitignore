@@ -17,3 +17,5 @@ logs
 
 # ide
 .vscode
+
+.npmrc
