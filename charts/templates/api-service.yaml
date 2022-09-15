@@ -3,10 +3,13 @@ kind: Service
 metadata:
   name: {{ .Values.appName }}
   namespace: {{ .Values.namespace }}
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: 'true'
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: {{ .Values.appName }}
   ports:
-    - port: 80
+    - protocol: TCP
+    - port: 4000
       targetPort: {{ .Values.PORT }}

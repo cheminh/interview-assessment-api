@@ -6,7 +6,7 @@ metadata:
   labels:
     app: {{ .Values.appName }}
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: {{ .Values.appName }}
@@ -24,21 +24,21 @@ spec:
             limits:
               memory: '512Mi'
               cpu: '100m'
-          volumeMounts:
-            - name: config-file-sec
-              mountPath: '/usr/src/config/'
+          # volumeMounts:
+          #   - name: config-file-sec
+          #     mountPath: '/usr/src/config/'
           ports:
             - containerPort: {{ .Values.PORT }}
           # Add in this lifecycle command to create a symlink to the config
           # file in src/utils/config.json
-          lifecycle:
-            postStart:
-              exec:
-                command:
-                  - /bin/sh
-                  - -c
-                  - rm -rf ./src/config.json && ln -s /usr/src/config/config-sec.json ./src/config.json
-      volumes:
-        - name: config-file-sec
-          secret:
-            secretName: config-sec.json
+      #     lifecycle:
+      #       postStart:
+      #         exec:
+      #           command:
+      #             - /bin/sh
+      #             - -c
+      #             - rm -rf ./src/config.json && ln -s /usr/src/config/config-sec.json ./src/config.json
+      # volumes:
+      #   - name: config-file-sec
+      #     secret:
+      #       secretName: config-sec.json
