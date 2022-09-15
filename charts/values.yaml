@@ -1,6 +1,6 @@
 imageRegistry: 'acrmuaksstudentdev.azurecr.io'
 apiDockerTag: '1.0'
-namespace: 'default'
+namespace: 'muaksa'
 PORT: 4000
 akvName: 'muprogskeyvault'
 configFile: 'config-file-sec'
