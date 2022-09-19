@@ -2,8 +2,9 @@ const express = require("express"); // importing the module
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const canadasql = require("./repository");
-
+const conf = require("./config.json");
 const localData = require("./data");
+const getRemoteData = require("./service");
 const port = 4000;
 const app = express(); // creating an Express app
 
@@ -14,14 +15,19 @@ const _canadasql = new canadasql();
 // set up route for '/', http://expressjs.com/en/5x/api.html#res.send
 // this will show up on `localhost:3000` in the browser
 app.get("/api/v1/provinces-territories", async (request, response) => {
-  try{
+  try {
+    // to call a remote service that returns the same data as 'localData',
+    // uncomment the 'getRemoteData' line and comment the 'localData' line
+
     let data = localData.provinces_territories;
+    //let data = await getRemoteData(conf.externalService);
+
     if (process.env.APP_DB_HOST) {
       const result = await _canadasql.getProvincesAndTerritories();
       data = result.recordset;
     }
     return response.json(data);
-  }catch(err){
+  } catch (err) {
     console.error('Error happened when retriving provices and territories from db', err);
     response.sendStatus(500);
   }
