@@ -19,5 +19,8 @@
     "express": "^4.17.1",
     "mssql": "^6.2.3",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18"
   }
 }
