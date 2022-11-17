@@ -1,4 +1,4 @@
-imageRegistry: 'acrmuaksstudentdev.azurecr.io'
+imageRegistry: 'muaks<PLACEHOLDER>devregistry.azurecr.io'
 apiDockerTag: '1.0'
 namespace: 'muaksa'
 PORT: 4000
@@ -6,5 +6,5 @@ akvName: 'muprogskeyvault'
 configFile: 'config-file-sec'
 tlsSecret: 'muprogs-tls-cert'
 prefix: 'coach'
-appName: 'student-mu-aks-a-api'
+appName: '<PLACEHOLDER>-mu-aks-a-api'
 host: 'muprogs.manulife.com'
