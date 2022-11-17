@@ -13,7 +13,7 @@ app.use(bodyParser.json()).use(cors());
 const _canadasql = new canadasql();
 
 // set up route for '/', http://expressjs.com/en/5x/api.html#res.send
-// this will show up on `localhost:3000` in the browser
+// this will show up on `localhost:4000` in the browser
 app.get("/api/v1/provinces-territories", async (request, response) => {
   try {
     // to call a remote service that returns the same data as 'localData',

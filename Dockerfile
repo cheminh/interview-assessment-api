@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:16-alpine
+FROM node:18-alpine
 
 # set working directory
 WORKDIR /usr/src/app
@@ -20,7 +20,7 @@ RUN rm .npmrc
 COPY src ./src
 
 # describe that the container is listening on port 3001
-EXPOSE 3001
+EXPOSE 4000
 
 # start container with npm run start
 CMD [ "npm", "run", "start" ]
