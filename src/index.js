@@ -5,9 +5,9 @@ const canadasql = require("./repository");
 const conf = require("./config.json");
 const localData = require("./data");
 const getRemoteData = require("./service");
-const port = 4000;
 const app = express(); // creating an Express app
 
+const { PORT = 4000, APP_DB_HOST } = process.env;
 
 app.use(bodyParser.json()).use(cors());
 const _canadasql = new canadasql();
@@ -22,18 +22,21 @@ app.get("/api/v1/provinces-territories", async (request, response) => {
     let data = localData.provinces_territories;
     //let data = await getRemoteData(conf.externalService);
 
-    if (process.env.APP_DB_HOST) {
+    if (APP_DB_HOST) {
       const result = await _canadasql.getProvincesAndTerritories();
       data = result.recordset;
     }
     return response.json(data);
   } catch (err) {
-    console.error('Error happened when retriving provices and territories from db', err);
+    console.error(
+      "Error happened when retriving provices and territories from db",
+      err
+    );
     response.sendStatus(500);
   }
 });
 
 // server will start listening for requests, the function is called immediately once the server is ready. Console.logs show up in your terminal.
-app.listen(port, () =>
-  console.log(`Hello World, I'm listening on port ${port}!`)
+app.listen(PORT, () =>
+  console.log(`Hello World, I'm listening on port ${PORT}!`)
 );
