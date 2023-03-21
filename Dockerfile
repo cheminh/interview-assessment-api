@@ -1,23 +1,29 @@
 # pull official base image
-FROM node:18-alpine
+FROM  artifactory.manulife.ca/endorsed-docker/ets-node:18-debian-1.1.1
+
+#set node env as PRODUCTION
+ENV NODE_ENV production
 
 # set working directory
 WORKDIR /usr/src/app
 
 # copy .npmrc to get npm packages from Manulife Artifactory
-COPY .npmrc ./
+COPY --chown=node:node .npmrc ./
 
 # copy package.json and package-lock.json to get dependencies
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 
-# install npm dependencies
-RUN npm ci
+# install npm dependencies except dev dependencies
+RUN npm ci --only=production
 
 # clean up the npmrc file
 RUN rm .npmrc
 
 # copy source files
-COPY src ./src
+COPY --chown=node:node src ./src
+
+#Run the process as node
+USER node
 
 # describe that the container is listening on port 3001
 EXPOSE 4000
