@@ -13,8 +13,10 @@ COPY --chown=node:node .npmrc ./
 # copy package.json and package-lock.json to get dependencies
 COPY --chown=node:node package*.json ./
 
+USER root
+
 # install npm dependencies except dev dependencies
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # clean up the npmrc file
 RUN rm .npmrc
