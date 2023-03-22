@@ -14,6 +14,20 @@ spec:
     metadata:
       labels:
         app: {{ .Values.appName }}
+      annotations:
+        ### annotations for Devo - start 
+        ### reference: https://manulife-ets.atlassian.net/wiki/spaces/PH/pages/6378622621/Azure+AKS+Container+stdout+-+App+Logs#AzureAKSContainerstdout-AppLogs-PodConfigurationMetadata
+        app_name: {{ .Values.appName }}			# any string denoting your app's name
+        env: dev 						                # dev | test | uat | prod
+        owning_segment: ets			          	# ets | can | us | asia | gf | gwam
+        sec_flag: 'false'				            # if true, logs have security details but does not have the ability to specify this at the event level
+        pii_flag: 'false'				            # if true, logs have pii content but does not have the ability to specify this at the event level
+        # app_comp: my-component-name         # any string denoting your component's name
+        # target_tag : 	ets				            # ets | can | us | asia | gf | gwam Note: Releasing thisb feature Soon
+        # asi_ci_num: CI111111			          # the CI number for the application
+        # app_ci_num: CI222222			          # the CI number for the top level component
+        # cost_center: '0123'				          # the cost center for the team
+        ### annotations for Devo - end 
     spec:
       nodeSelector:
         'kubernetes.io/os': linux
