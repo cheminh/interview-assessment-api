@@ -1,3 +1,3 @@
 {
-  "externalService": "<EXTERNAL_ENDPOINT>"
+  "externalService": "https://mu-aks-a-api-asia.apps.mu-asia.manulife.com/api/v1/provinces-territories"
 }
