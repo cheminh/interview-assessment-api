@@ -19,8 +19,8 @@ app.get("/api/v1/provinces-territories", async (request, response) => {
     // to call a remote service that returns the same data as 'localData',
     // uncomment the 'getRemoteData' line and comment the 'localData' line
 
-    // let data = localData.provinces_territories;
-    let data = await getRemoteData(conf.externalService);
+    let data = localData.provinces_territories;
+    // let data = await getRemoteData(conf.externalService);
 
     if (APP_DB_HOST) {
       const result = await _canadasql.getProvincesAndTerritories();
