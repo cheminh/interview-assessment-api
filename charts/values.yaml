@@ -1,5 +1,5 @@
-imageRegistry: 'muaksayoroseadevregistry.azurecr.io'
-apiDockerTag: '1.0'
+imageRegistry: 'muaksa<PLACEHOLDER>devregistry.azurecr.io'
+apiDockerTag: '1.1'
 namespace: 'muaksa'
 PORT: 4000
-appName: 'yorosea-mu-aks-a-api'
+appName: '<PLACEHOLDER>-mu-aks-a-api'

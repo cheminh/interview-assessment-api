@@ -20,7 +20,7 @@ app.get("/api/v1/provinces-territories", async (request, response) => {
     // uncomment the 'getRemoteData' line and comment the 'localData' line
 
     let data = localData.provinces_territories;
-    // let data = await getRemoteData(conf.externalService);
+    //let data = await getRemoteData(conf.externalService);
 
     if (APP_DB_HOST) {
       const result = await _canadasql.getProvincesAndTerritories();
