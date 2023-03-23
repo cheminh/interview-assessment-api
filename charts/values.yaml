@@ -1,5 +1,5 @@
 imageRegistry: 'muaksa<PLACEHOLDER>devregistry.azurecr.io'
-apiDockerTag: '1.1'
+apiDockerTag: '1.0'
 namespace: 'muaksa'
 PORT: 4000
 appName: '<PLACEHOLDER>-mu-aks-a-api'
