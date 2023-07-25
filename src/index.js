@@ -1,5 +1,6 @@
 const express = require("express"); // importing the module
 const bodyParser = require("body-parser");
+const morgan = require("morgan");
 const cors = require("cors");
 const canadasql = require("./repository");
 const conf = require("./config.json");
@@ -10,6 +11,9 @@ const app = express(); // creating an Express app
 const { PORT = 4000, APP_DB_HOST } = process.env;
 
 app.use(bodyParser.json()).use(cors());
+app.use(
+  morgan(":method :url :status :res[content-length] - :response-time ms")
+);
 const _canadasql = new canadasql();
 
 // set up route for '/', http://expressjs.com/en/5x/api.html#res.send
