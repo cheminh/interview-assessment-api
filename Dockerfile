@@ -1,5 +1,5 @@
 # pull official base image
-FROM  artifactory.manulife.ca/endorsed-docker/ets-node:18-debian-1.1.1
+FROM  artifactory.manulife.ca/endorsed-docker/ets-node:18-debian-1.5.0
 
 #set node env as PRODUCTION
 ENV NODE_ENV production

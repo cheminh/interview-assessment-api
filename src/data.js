@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   provinces_territories: [
       {"id": "1", "name": "Ontario", "postal_abbrevation": "ON", "capital": "Toronto", "population": "14,734,014"},
       {"id": "2", "name": "Quebec", "postal_abbrevation": "QC", "capital": "Quebec City", "population": "8,574,571"},

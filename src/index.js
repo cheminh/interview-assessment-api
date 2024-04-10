@@ -1,11 +1,11 @@
-const express = require("express"); // importing the module
-const bodyParser = require("body-parser");
-const morgan = require("morgan");
-const cors = require("cors");
-const canadasql = require("./repository");
-const conf = require("./config.json");
-const localData = require("./data");
-const getRemoteData = require("./service");
+import express from "express";
+import bodyParser from "body-parser";
+import morgan from "morgan";
+import cors from "cors";
+import canadasql  from "./repository.js";
+import conf from "./config.json" assert { type: "json" };
+import localData from "./data.js";
+import getRemoteData from "./service.js";
 const app = express(); // creating an Express app
 
 const { PORT = 4000, APP_DB_HOST } = process.env;

@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 const getRemoteData = async (url) => {
   console.log(`Fetching service at ${url}`);
@@ -14,4 +14,4 @@ const getRemoteData = async (url) => {
 
 };
 
-module.exports = getRemoteData;
+export default getRemoteData;

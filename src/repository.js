@@ -1,9 +1,10 @@
-const mssql = require('mssql');
-require('dotenv').config();
+import mssql from "mssql";
+import dotlocal from "dotenv";
 
 let mssqlConnection;
+const config = dotlocal.config();
 
-module.exports = class canadasql {
+export default class canadasql {
 
   constructor() { }
 

@@ -2,6 +2,7 @@
   "name": "<PLACEHOLDER>-mu-aks-a-api",
   "version": "1.0.0",
   "description": "Sample rest api project for MU AKS Advanced",
+  "type": "module",
   "main": "data.js",
   "scripts": {
     "start": "node src/index.js",
@@ -15,11 +16,11 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.4.5",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
-    "mssql": "^6.2.3",
-    "node-fetch": "^2.6.0"
+    "mssql": "^10.0.2",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "^18.7.18"
