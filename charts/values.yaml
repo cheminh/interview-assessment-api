@@ -2,4 +2,6 @@ imageRegistry: 'muaksa<PLACEHOLDER>devregistry.azurecr.io'
 apiDockerTag: '1.0'
 namespace: 'muaksa'
 PORT: 4000
-appName: '<PLACEHOLDER>-mu-aks-a-api'
+environment: dev
+ciNumber: CI00000000000 # sample CI number
+appCiNumber: CI00000000000 # sample CI number

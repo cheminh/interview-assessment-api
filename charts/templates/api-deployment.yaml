@@ -1,39 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}
+  name: {{ .Chart.Name }}
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ .Values.appName }}
+    app: {{ .Chart.Name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.appName }}
+      app: {{ .Chart.Name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}
+        app: {{ .Chart.Name }}
       annotations:
         ### annotations for Devo - start 
         ### reference: https://manulife-ets.atlassian.net/wiki/spaces/PH/pages/6378622621/Azure+AKS+Container+stdout+-+App+Logs#AzureAKSContainerstdout-AppLogs-PodConfigurationMetadata
-        app_name: {{ .Values.appName }}			# any string denoting your app's name
-        env: dev 						                # dev | test | uat | prod
-        owning_segment: ets			          	# ets | can | us | asia | gf | gwam
-        sec_flag: 'false'				            # if true, logs have security details but does not have the ability to specify this at the event level
-        pii_flag: 'false'				            # if true, logs have pii content but does not have the ability to specify this at the event level
-        # app_comp: my-component-name         # any string denoting your component's name
-        # target_tag : 	ets				            # ets | can | us | asia | gf | gwam Note: Releasing thisb feature Soon
-        # asi_ci_num: CI111111			          # the CI number for the application
-        # app_ci_num: CI222222			          # the CI number for the top level component
-        # cost_center: '0123'				          # the cost center for the team
+        mfc_ver: "1.1"
+        app_name: "{{ .Chart.Name }}"   # any string denoting your app's name
+        app_comp: "{{ .Chart.Name }}"   # any string denoting your component's name
+        env: {{ .Values.environment }}          # dev | test | uat | prod
+        asi_ci_num: {{ .Values.ciNumber }}      # the CI number for the application
+        app_ci_num: {{ .Values.appCiNumber }}   # the CI number for the app component
+        cost_center: "0000"                     # the cost center for the team
+        owning_segment: ets                     # ets | can | us | asia | gf | gwam
+        sec_flag: "false"                       # if true, logs have security details but does not have the ability to specify this at the event level
+        pii_flag: "false"                       # if true, logs have pii content but does not have the ability to specify this at the event level
         ### annotations for Devo - end 
     spec:
       nodeSelector:
         'kubernetes.io/os': linux
       containers:
-        - name: {{ .Values.appName }}
-          image: {{ .Values.imageRegistry }}/{{ .Values.appName }}:{{ .Values.apiDockerTag }}
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.imageRegistry }}/{{ .Chart.Name }}:{{ .Values.apiDockerTag }}
           imagePullPolicy: Always
           resources:
             limits:
