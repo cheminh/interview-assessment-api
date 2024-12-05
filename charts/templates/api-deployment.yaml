@@ -35,6 +35,19 @@ spec:
         - name: {{ .Chart.Name }}
           image: {{ .Values.imageRegistry }}/{{ .Chart.Name }}:{{ .Values.apiDockerTag }}
           imagePullPolicy: Always
+          env:
+            - name: NEW_RELIC_APP_NAME
+              value: "acordvi-mu-aks-a-api"
+            - name: NEW_RELIC_LABELS
+              value: "AppDetail:MUAKSA;BU:MU-AKS-A;Region:DEV;Division:ETS"
+            - name: NEW_RELIC_DISTRIBUTED_TRACING_ENABLED
+              value: "true"
+            - name: NEW_RELIC_LICENSE_KEY
+              value: new-relic-license-key@azurekeyvault
+            - name: NEW_RELIC_NO_CONFIG_FILE
+              value: "true"
+            - name: NEW_RELIC_LOG_ENABLED
+              value: "false"
           resources:
             limits:
               memory: '512Mi'
