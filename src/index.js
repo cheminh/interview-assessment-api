@@ -6,16 +6,9 @@ import canadasql  from "./repository.js";
 import conf from "./config.json" assert { type: "json" };
 import localData from "./data.js";
 import getRemoteData from "./service.js";
-import newrelic from "newrelic";
-
 const app = express(); // creating an Express app
 
 const { PORT = 4000, APP_DB_HOST } = process.env;
-
-newrelic.instrumentLoadedModule(
-  'express',
-  express
-);
 
 app.use(bodyParser.json()).use(cors());
 app.use(
