@@ -2,8 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import cors from "cors";
-import canadasql  from "./repository.js";
-import conf from "./config.json" assert { type: "json" };
+import canadasql from "./repository.js";
+import conf from "./config.json" with { type: "json" };
 import localData from "./data.js";
 import getRemoteData from "./service.js";
 const app = express(); // creating an Express app
