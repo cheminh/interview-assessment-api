@@ -1,6 +1,6 @@
-imageRegistry: 'muaksa<PLACEHOLDER>devregistry.azurecr.io'
-apiDockerTag: '1.0'
-namespace: 'muaksa'
+imageRegistry: "muaksacheminhdevregistry.azurecr.io"
+apiDockerTag: "1.0"
+namespace: "muaksa"
 PORT: 4000
 environment: dev
 ciNumber: CI00000000000 # sample CI number

@@ -1,5 +1,5 @@
 {
-  "name": "<PLACEHOLDER>-mu-aks-a-api",
+  "name": "cheminh-mu-aks-a-api",
   "version": "1.0.0",
   "description": "Sample rest api project for MU AKS Advanced",
   "type": "module",
@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker:local:build": "docker build -t <PLACEHOLDER>-mu-aks-a-api:1.0 .",
-    "docker:local:run": "docker run -p 4000:4000 <PLACEHOLDER>-mu-aks-a-api:1.0"
+    "docker:local:build": "docker build --platform linux/amd64 -t cheminh-mu-aks-a-api:1.0 .",
+    "docker:local:run": "docker run -p 4000:4000 cheminh-mu-aks-a-api:1.0"
   },
   "keywords": [],
   "author": "Manulife University AKS - Advanced",
