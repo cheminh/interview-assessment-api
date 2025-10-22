@@ -1,5 +1,5 @@
 imageRegistry: "muaksacheminhdevregistry.azurecr.io"
-apiDockerTag: "1.0"
+apiDockerTag: "1.6" # need to match package.json version
 namespace: "muaksa"
 PORT: 4000
 environment: dev

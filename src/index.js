@@ -6,7 +6,13 @@ import canadasql from "./repository.js";
 import conf from "./config.json" with { type: "json" };
 import localData from "./data.js";
 import getRemoteData from "./service.js";
+import newrelic from "newrelic";
+
 const app = express(); // creating an Express app
+newrelic.instrumentLoadedModule(
+  'express',
+  express
+);
 
 const { PORT = 4000, APP_DB_HOST } = process.env;
 
