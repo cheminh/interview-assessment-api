@@ -1,0 +1,13 @@
+{
+  "externalService": "https://muprogs.manulife.com/coach/coach-mu-aks-a-api/api/v1/provinces-territories",
+  "newRelic": {
+    "app_name": "interview-assmt-be",
+    "labels": "AppDetail:INTERVIEW-ASSMT;BU:INTERVIEW-ASSMT-BE;Region:DEV;Division:ETS",
+    "distributed_tracing": {
+      "enabled": true
+    },
+    "logging": {
+      "enabled": false
+    }
+  }
+}

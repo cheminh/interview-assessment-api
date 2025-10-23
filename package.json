@@ -1,14 +1,16 @@
 {
-  "name": "cheminh-mu-aks-a-api",
+  "name": "interview-assmt-be",
   "version": "1.7",
-  "description": "Sample rest api project for MU AKS Advanced",
+  "description": "Sample rest api project for Interview Assessment Backend",
   "type": "module",
   "main": "data.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "lsof -ti:4000 | xargs kill -9 2>/dev/null || true && node src/index.js",
+    "start:prod": "lsof -ti:4000 | xargs kill -9 2>/dev/null || true && node -r ./newrelic.cjs src/index.js",
+    "start:dev": "lsof -ti:4000 | xargs kill -9 2>/dev/null || true && node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker:local:build": "docker build --platform linux/amd64 -t cheminh-mu-aks-a-api:1.7 .",
-    "docker:local:run": "docker run -p 4000:4000 cheminh-mu-aks-a-api:1.7"
+    "docker:local:build": "docker build --platform linux/amd64 -t interview-assmt-be:1.7 .",
+    "docker:local:run": "docker run -p 4000:4000 interview-assmt-be:1.7"
   },
   "keywords": [],
   "author": "Manulife University AKS - Advanced",

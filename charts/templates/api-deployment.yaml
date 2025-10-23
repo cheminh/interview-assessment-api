@@ -49,9 +49,9 @@ spec:
             - containerPort: {{ .Values.PORT }}
           env:
             - name: NEW_RELIC_APP_NAME
-              value: "cheminh-mu-aks-a-api"
+              value: "interview-assmt-be"
             - name: NEW_RELIC_LABELS
-              value: "AppDetail:MUAKSA;BU:MU-AKS-A;Region:DEV;Division:ETS"
+              value: "AppDetail:INTERVIEW-ASSMT;BU:INTERVIEW-ASSMT-BE;Region:DEV;Division:ETS"
             - name: NEW_RELIC_DISTRIBUTED_TRACING_ENABLED
               value: "true"
             - name: NEW_RELIC_LICENSE_KEY
