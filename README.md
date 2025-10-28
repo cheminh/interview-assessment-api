@@ -4,8 +4,6 @@ Notes:
 
 - This `interview-assmt-be` project only has 1 endpoint `~/api/v1/provinces-territories` which provides province and territory data for interview assessment purposes.
 
-- All instructions are located in the following [Application Deployment](https://github.com/manulife-university-global/mu-aks-a-labs-deployment) lab.
-
 Install dependencies:
 
 ```bash
